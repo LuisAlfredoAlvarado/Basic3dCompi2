@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es" >
+	<head>
+		<meta charset="utf-8">
+	    <link rel="stylesheet" href="./css/materialize.min.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<style>
+		body { display: flex; min-height: 100vh; flex-direction: column; }
+		main { flex: 1 0 auto; }
+		</style>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Proyecto 2</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+		<script type="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.js"></script>
+		<script src="./js/tabla.js"></script>
+		<script src="./js/error.js"></script>
+		<script src="./js/or.js"></script>
+		<script src="./js/dimension.js"></script>
+		<script src="./js/variables.js"></script>
+		<script src="./js/funciones.js"></script>
+		<script src="./js/element.js"></script>
+		<script src="./js/parserrecolec.js"></script>
+		<script src="./js/parser.js"></script>
+		<script src="./js/parserelments.js"></script>
+		<script src="./js/parser3d.js"></script>
+		<script src="./js/nodo.js"></script>
+		<script src="./js/interprete.js"></script>
+		<script src="./js/optimizador.js"></script>
+	</head>
+	<body>
+	<header>
+		<nav>
+  <div class="nav-wrapper blue darken-4">
+   	<a href="index.html" class="brand-logo right light italic" style="padding-right: 1em;">EJECUCIÓN</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a href="">Inicio</a></li>
+      <li><a href="">Reportes</a></li>
+    </ul>
+  </div>
+</nav>
+	</header>
+<main>
+	
+		<div class='container'>
+			 <div class='row'>
+				 <div class='col s12 m8 l6'>
+					<br><br><br><br><br>
+						<textarea name='codigo3d'  id='codigo3d' cols='20' rows='20' style='border: solid 1px rgba(0,0,0,0.2); border-radius: 5px; width: 100%; height: 81%;'>
+						</textarea>
+					
+				</div>
+						<div class='col s12 m4 l6'>
+							<br>
+							<h5> Salidas </h5><input type="image" onClick="Optimizar_cod3d()" name="submit" class="circle responsive-img" src="images/opt.png" border="0" alt="Submit" />
+							<br>
+							<textarea name='consola' id='consola' cols='20' rows='20' style='border: solid 1px rgba(0,0,0,0.2); border-radius: 5px; width: 100%; height: 81%;'></textarea>
+							<input type="hidden" name='core'id="core" value="void $$_NumAStr() {
+//Inicio IF$sentencia8
+t0=S;
+t1 = P + 1;
+t2 = Stack[t1];
+if(t2==0) goto L26;
+if ( t2 < 0) goto L10;
+goto L9;
+L10:
+Pool[S]=45;
+S=S+1;
+t4 = P + 1;
+t5 = Stack[t4];
+t6 = 0 - 1;
+t7 = t5 * t6;
+t8 = P + 1;
+Stack[t8] = t7;
+L9:
+//Fin IF$sentencia8
+t9 = P + 1;
+t10 = Stack[t9];
+t11 = P + 7;
+Stack[t11] = t10;
+t12 = P + 6;
+Stack[t12] = 0;
+t13 = 0 - 1;
+t14 = P + 5;
+Stack[t14] = t13;
+t15 = P + 4;
+Stack[t15] = 0;
+//While $sentencia11
+L12:
+t16 = P + 1;
+t17 = Stack[t16];
+t18 = t17 % 1;
+if ( t18 != 0) goto L15;
+goto L14;
+L15:
+t20 = P + 1;
+t21 = Stack[t20];
+t22 = t21 * 10;
+t23 = P + 1;
+Stack[t23] = t22;
+t24 = P + 5;
+t25 = Stack[t24];
+t26 = t25 + 1;
+t27 = P + 5;
+Stack[t27] = t26;
+t28 = P + 4;
+Stack[t28] = 1;
+goto L12;
+L13,L14:
+//Fin While->$sentencia11
+//While $sentencia16
+L17:
+t29 = P + 7;
+t30 = Stack[t29];
+if ( t30 >= 1) goto L20;
+goto L19;
+L20:
+t32 = P + 7;
+t33 = Stack[t32];
+t34 = t33 / 10;
+t35 = P + 7;
+Stack[t35] = t34;
+t36 = P + 6;
+t37 = Stack[t36];
+t38 = t37 + 1;
+t39 = P + 6;
+Stack[t39] = t38;
+t40 = P + 5;
+t41 = Stack[t40];
+t42 = t41 + 1;
+t43 = P + 5;
+Stack[t43] = t42;
+goto L17;
+L18,L19:
+//Fin While->$sentencia16
+t44 = P + 5;
+t45 = Stack[t44];
+t46 = 10 ^ t45;
+t47 = P + 3;
+Stack[t47] = t46;
+//While $sentencia22
+L23:
+t48 = P + 3;
+t49 = Stack[t48];
+if ( t49 >= 1) goto L26;
+goto L25;
+L26:
+//Inicio IF$sentencia27
+t51 = P + 6;
+t52 = Stack[t51];
+t54 = P + 4;
+t55 = Stack[t54];
+if ( t52 == 0) goto L29;
+goto L28;
+L29:
+if ( t55==1 ) goto L31;
+goto L30;
+L31:
+Pool[S]=46;
+S=S+1;
+t56 = P + 6;
+t57 = Stack[t56];
+t58 = t57 - 1;
+t59 = P + 6;
+Stack[t59] = t58;
+goto L23; //Continue
+L30,L28:
+//Fin IF$sentencia27
+t60 = P + 2;
+Stack[t60] = 0;
+//While $sentencia32
+L33:
+t61 = P + 1;
+t62 = Stack[t61];
+t63 = P + 2;
+t64 = Stack[t63];
+t65 = P + 3;
+t66 = Stack[t65];
+t67 = t64 * t66;
+t68 = t62 - t67;
+t69 = P + 3;
+t70 = Stack[t69];
+if ( t68 >= t70) goto L36;
+goto L35;
+L36:
+t72 = P + 2;
+t73 = Stack[t72];
+t74 = t73 + 1;
+t75 = P + 2;
+Stack[t75] = t74;
+goto L33;
+L34,L35:
+//Fin While->$sentencia32
+t76 = P + 1;
+t77 = Stack[t76];
+t78 = P + 2;
+t79 = Stack[t78];
+t80 = P + 3;
+t81 = Stack[t80];
+t82 = t79 * t81;
+t83 = t77 - t82;
+t84 = P + 1;
+Stack[t84] = t83;
+t85 = P + 6;
+t86 = Stack[t85];
+t87 = t86 - 1;
+t88 = P + 6;
+Stack[t88] = t87;
+t89 = P + 2;
+t90 = Stack[t89];
+t91 = t90 + 48;
+Pool[S]=t91;
+S=S+1;
+t93 = P + 3;
+t94 = Stack[t93];
+t95 = t94 / 10;
+t96 = P + 3;
+Stack[t96] = t95;
+goto L23;
+L24,L25:
+goto L7;
+//Fin While->$sentencia22
+L26:
+Pool[S]=48;
+S = S + 1;
+L7://Retorno NumeroACadena
+Pool[S]=0;
+S=S+1;
+Stack[P]=t0;
+}
+void $$_getBool()
+{
+	t90 = P + 1;
+	t91 = Stack[t90];
+	t92 = t91;
+	t93 = Pool[t92];
+	if( t93 != 116 ) goto L21;
+	t92 = t92 + 1;
+	t93 = Pool[t92];
+	if( t93 != 114 ) goto L21;
+	t92 = t92 + 1;
+	t93 = Pool[t92];
+	if( t93 != 117 ) goto L21;
+	t92 = t92 + 1;
+	t93 = Pool[t92];
+	if( t93 != 101 ) goto L21;
+	t92 = t92 + 1;
+	t93 = Pool[t92];
+	if( t93 != 0 ) goto L21;
+	Stack[P] = 1;
+	goto L22;
+	L21:
+	Stack[P] = 0;
+	L22:
+}
+void $$_outStr()
+{
+	t94 = P + 1;
+	t95 = Stack[t94];
+	t96 = Pool[t95];
+	L23:
+	if (t96 == 0) goto L24;
+	printf(%c,t96);
+	t95=t95+1;
+	t96 = Pool[t95];
+	goto L23;
+	L24:
+}
+void $$_outNum()
+{
+	t97 = P + 2;
+	t98 = Stack[t97];
+	t99 = P + 1;
+	t100 = Stack[t99];
+	if ( t98 == 1 ) goto L25;
+	printf(%f,t100);
+	goto L26;
+	L25:
+	printf(%d,t100);
+	L26:
+}
+void $$_getStrLength()
+{
+	t101 = P + 1;
+	t102 = Stack[t101];
+	t103 = Pool[t102];
+	t104 = 0;
+	L27:
+	if (t103 == 0) goto L28;
+	t104 = t104 + 1;
+	t102 = t102 + 1;
+	t103 = Pool[t102];
+	goto L27;
+	L28:
+	Stack[P] = t104;
+}
+void $$_getRandom()
+{
+	t105 = H;
+	t106 = t105 / 10;
+	t0 = 0.5;
+	t106 = t106 ^ t0;
+	Stack[P]=t106;
+}
+void $$_BoolaStr()
+{
+	t107 = P + 1;
+	t108 = Stack[t107];
+	if( t108 == 0 ) goto L29;
+	t109 = S + 0;
+	Pool[t109] = 116; //# ASCII de t
+	t110 = S + 1;
+	Pool[t110] = 114; //# ASCII de r
+	t111 = S + 2;
+	Pool[t111] = 117; //# ASCII de u
+	t112 = S + 3;
+	Pool[t112] = 101; //# ASCII de e
+	t113 = S + 5;
+	Pool[t113] = 0; //Fin de Cadena
+	Stack[P] = S;
+	S = S + 6;
+	goto L30;
+	L29:
+	t114 =  S + 0;
+	Pool[t114] = 102; //# ASCII de f
+	t115 = S + 1;
+	Pool[t115] = 97; //# ASCII de a
+	t116 = S + 2;
+	Pool[t116] = 108; //# ASCII de l
+	t117 = S + 3;
+	Pool[t117] = 115; //# ASCII de s
+	t118 = S + 4;
+	Pool[t118] = 101; //# ASCII de e
+	t119 = S + 6;
+	Pool[t119] = 0; //Fin de Cadena
+	Stack[P] = S;
+	S = S + 7;
+	L30:
+}
+void $$_Mayor()
+{
+	Stack[P] = 0;
+	t132 = P + 1;
+	t133 = P + 2; 
+	t134 = Stack [t132];
+	t135 = Stack [t133];
+	L37:
+	t136 = Pool[t134];
+	t137 = Pool[t135];
+	if(t136 == 0) goto L38;
+	goto L40;
+	L38:
+	if (t137 == 0) goto L39;
+	L40:
+	t134 = t134 + 1;
+	t135 = t135 + 1;
+	if ( t136 == t137 ) goto L37;
+	if( t136 <= t137) goto L39;
+	Stack[P] = 1;
+	L39:
+}
+void $$_Menor()
+{
+	Stack[P] = 0;
+	t132 = P + 1;
+	t133 = P + 2; 
+	t134 = Stack [t132];
+	t135 = Stack [t133];
+	L37:
+	t136 = Pool[t134];
+	t137 = Pool[t135];
+	if(t136 == 0) goto L38;
+	goto L40;
+	L38:
+	if (t137 == 0) goto L39;
+	L40:
+	t134 = t134 + 1;
+	t135 = t135 + 1;
+	if ( t136 == t137 ) goto L37;
+	if( t136 >= t137) goto L39;
+	Stack[P] = 1;
+	L39:
+}
+void $$_Igual()
+{
+	Stack[P] = 1;
+	t132 = P + 1;
+	t133 = P + 2; 
+	t134 = Stack [t132];
+	t135 = Stack [t133];
+	L37:
+	t136 = Pool[t134];
+	t137 = Pool[t135];
+	if(t136 == 0) goto L38;
+	goto L40;
+	L38:
+	if (t137 == 0) goto L39;
+	L40:
+	t134 = t134 + 1;
+	t135 = t135 + 1;
+	if ( t136 == t137 ) goto L37;
+	L35:
+	Stack[P] = 0;
+	L39:
+}
+void $$_getNum(){
+	t0 = P + 1;
+	t1 = Stack[t0];
+	t2 = P + 2;
+	t3 = Stack[t2];
+	if(t3==1) goto L1;
+	if(t3==2) goto L2;
+	if(t3==3) goto L3;
+	goto L4;
+	L1:
+	t5 = 0;
+	t7 = 0;
+	t4 = Pool[t1];
+	t8 = 0 - 1;
+	t1 = t1 + 1;
+	if (t4 == 45) goto L7;
+	t8 = 1;
+	t1 = t1 - 1;
+	L7:
+	t4 = Pool[t1];
+	if(t4 == 46) goto L5;
+	if(t4 == 0) goto L6;
+	if (t4<48) goto L4;
+	if (t4>57) goto L4;
+	t5 = t5 * 10;
+	t6 = t4 - 48;
+	t5 = t5 + t6;
+	t1 = t1 + 1;
+	goto L7;
+	L5:
+	t1 = t1 + 1;
+	t9 = 10;
+	L8:
+	t4 = Pool[t1];
+	if(t4 == 0) goto L6;
+	if (t4<48) goto L4;
+	if (t4>57) goto L4;
+	t10 = t4 - 48;
+	t11 = t10 / t9;
+	t7 = t7 + t11;
+	t10 = t10 * 10;
+	t1 = t1 + 1;
+	goto L8;
+	L6:
+	t5 = t5 + t7;
+	Stack[P]=t5;
+	goto L9;//Fin
+	L2: //Binario
+	t4 = Pool[t1];
+	if(t4 != 98) goto L4;
+	t1 = t1 + 1;
+	t5 = 0;
+	t7 = 0;
+	L12:
+	t4 = Pool[t1];
+	if(t4 == 46) goto L11;
+	if(t4 == 0) goto L10;
+	if (t4<48) goto L4;
+	if (t4>49) goto L4;
+	t5 = t5 * 2;
+	t6 = t4 - 48;
+	t5 = t5 + t6;
+	t1 = t1 + 1;
+	goto L12;
+	L11:
+	t7 = 0;
+	t1 = t1 + 1;
+	t9 = 2;
+	L13:
+	t4 = Pool[t1];
+	if(t4 == 0) goto L10;
+	if (t4<48) goto L4;
+	if (t4>49) goto L4;
+	t10 = t4 - 48;
+	t11 = t10 / t9;
+	t7 = t7 + t11;
+	t9 = t9 * 2;
+	t1 = t1 + 1;
+	goto L13;
+	L10:
+	t5 = t5 + t7;
+	Stack[P]=t5;
+	goto L9;//Fin
+	L3://Hexa
+	t4 = Pool[t1];
+	if(t4 != 48) goto L4;
+	t1 = t1 + 1;
+	t4 = Pool[t1];
+	if(t4 != 120) goto L4;
+	t1 = t1 + 1;
+	t5 = 0;
+	L14:
+	t4 = Pool[t1];
+	if(t4 == 0) goto L19;
+	if (t4<48) goto L4;
+	if (t4<=57) goto L16;
+	if (t4<65) goto L4;
+	if (t4<=70) goto L18;
+	if (t4<97) goto L4;
+	if (t4<=102) goto L17;
+	goto L4;
+	L20:
+	if (t4<=102) goto L18;
+	L16:
+	t5 = t5 * 16;
+	t6 = t4 - 48;
+	t5 = t5 + t6;
+	t1 = t1 + 1;
+	goto L14;
+	L18:
+	t5 = t5 * 16;
+	t6 = t4 - 55;
+	t5 = t5 + t6;
+	t1 = t1 + 1;
+	goto L14;
+	L17:
+	t5 = t5 * 16;
+	t6 = t4 - 87;
+	t5 = t5 + t6;
+	t1 = t1 + 1;
+	goto L14;
+	L19:
+	Stack[P]=t5;
+	goto L9;//Fin
+	L4://Error
+	t0 = P + 3;
+	t1 = Stack[t0];
+	Stack[P] = t1;
+	L9: //Fin
+
+}">
+							<input type="button" value="Click me" onclick="Analizar()">
+							<input type="button" value="3d" onclick="Analizar3d()">
+						</div>
+					
+				</div>
+</form>
+	</main>
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+	 <script  type="text/javascript">
+	 function Analizar(){
+	  ts=new Tabla()
+	  var cod=document.getElementById('codigo3d').value;
+	  document.getElementById('consola').value=''
+  	  try{
+  	  parser1.parse(cod);
+  		}
+  		catch(err) {
+  			console.log(err)
+  		}
+  	  var result = ts
+  	  ts.Definir_Tam();
+  	  if(result.HayErrores())
+  	  	{result.Escribir();
+  	  	}
+  	   Consola=document.getElementById('consola');
+  	   ts.consola=document.getElementById('consola');
+  	   try{
+  	  parser.parse(cod);
+  		}
+  		catch(err) {
+  			console.log(err)
+  		}
+  	  }
+      </script>
+      <script type="text/javascript">
+      function Analizar3d()
+      {
+      	var cod3d=document.getElementById('consola').value;
+      	var core=document.getElementById('core').value;
+  	  	try{
+  	  		Funciones_3d=new Array();
+  	  		var inter=new Interpretre();
+  	  		var cod=core+cod3d;
+  	  		parser3d.parse(cod);
+  	  		inter.Ejecutar(Funciones_3d);
+  			}
+  			catch(err) {
+  				console.log(err)
+  			}
+      }
+      </script>
+      <script type="text/javascript">
+      function Optimizar_cod3d()
+      {
+      	var cod3d=document.getElementById('consola').value;
+  	  	try{
+  	  		Funciones_3d=new Array();
+  	  		var opt = new Optimizador();
+  	  		var cod=cod3d;
+  	  		parser3d.parse(cod);
+  	  		opt.consola=document.getElementById('consola');
+  	  		opt.consola.value=''
+  	  		opt.Optimizar(Funciones_3d);
+  			}
+  			catch(err) {
+  				console.log(err)
+  			}
+      }
+      </script>
+      <script type="text/javascript">
+      function preloadFunc()
+    	{
+    	  var cod=String(document.cookie.split('name=')[1]);
+    	  var cod_s=cod.split('~').join('\n');
+      	  var cod_s2=cod_s.split('@').join(';');
+          document.getElementById("codigo3d").value = cod_s2;
+    	}
+    	window.onpaint = preloadFunc();
+	 </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es" ng-app='Compi2'>
+	<head>
+		<meta charset="utf-8">
+	    <link rel="stylesheet" href="./css/materialize.min.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<style>
+		body { display: flex; min-height: 100vh; flex-direction: column; }
+		main { flex: 1 0 auto; }
+		</style>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Proyecto 2</title>
+		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+   		 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js'></script>
+    		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js'></script>
+        
+		<script src="./js/app/app.module.js"></script>
+		<script src="./js/app/app.config.js"></script>
+		<script src="./js/app/modulos/modulo.module.js"></script>
+		<script src="./js/app/modulos/modulo.component.js"></script>
+		<script src="./js/parser.js"></script>
+		
+	</head>
+	<body>
+	<header>
+		<nav>
+  <div class="nav-wrapper blue darken-4">
+   	<a href="index.html" class="brand-logo right light italic" style="padding-right: 1em;">NIVEL BÁSICO</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a href="">Inicio</a></li>
+      <li><a href="">Debug</a></li>
+      <li><a href="">Optimizar</a></li>
+      <li><a href="">Reportes</a></li>
+    </ul>
+  </div>
+</nav>
+	</header>
+<main>
+		<div class="container">
+			 <div class="row">
+				 <div class="col s12 m8 l7">
+					<br><br><br>
+						<div id="DivBlocky" style="height: 460px; width: 600px; margin-top: 1em;">
+						</div>
+					
+				</div>
+						<div class="col s12 m4 l5">
+							<h5> Codigo de Tres Direcciones &nbsp; &nbsp; <input type="image" onClick="Ejecutar()" name="submit" class="circle responsive-img" src="images/play.png" border="0" alt="Submit" /></h5> 
+							<br>
+							<textarea name="cod" id="cod" cols="20" rows="20" style="border: solid 1px rgba(0,0,0,0.2); border-radius: 5px; width: 100%; height: 81%;"></textarea>
+						</div>
+					
+				</div>
+			</div>
+	</main>
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     <script src="blocky/blockly_compressed.js"></script>
+	 <script src="blocky/blocks_compressed.js"></script>
+	 <script src="blocky/blocks/scontrol.js"></script>
+	  <script src="blocky/javascript_compressed.js"></script>
+	 <script src="blocky/msg/js/es.js"></script>
+	 <xml id="toolbox" style="display: none">
+ 	 	<category name="Control">
+ 	 	<block type="if"></block>
+ 	 	<block type="else"></block>
+  		<block type="switch"></block>
+  		<block type="case"></block>
+  		<block type="default"></block>
+  	    </category>
+  	    <category name="Ciclos">
+ 	 	<block type="while"></block>
+ 	 	<block type="dowhile"></block>
+ 	 	<block type="dowhilex"></block>
+ 	 	<block type="repeatuntil"></block>
+ 	 	<block type="for"></block>
+ 	 	<block type="loop"></block>
+ 	 	<block type="count"></block>
+  	    </category>
+  	    <category name="Variables">
+  	    <block type="unario"></block>
+  	    <block type="texto"></block>
+  		<block type="declaracion"></block>
+  		<block type="math_number"></block>
+  		<block type="variable"></block>
+  		<block type="boolean"></block>
+  		<block type="logicos"></block>
+  		<block type="operacion"></block>
+  		<block type="relacionales"></block>
+  	    </category>
+  	    <category name="Funciones">
+  		<block type="show"></block>
+  		<block type="getbool"></block>
+  		<block type="getnum"></block>
+  		</category>
+  		 <category name="Texto">
+  		<block type="text"></block>
+  		<block type="text_print"></block>
+  		</category>
+  </xml>
+	 <script>
+	   var EspacioTrabajo=Blockly.inject("DivBlocky",{toolbox: document.getElementById('toolbox')});
+	 </script>
+	 <script >
+	 function myUpdateFunction(event) {
+  	var code = Blockly.JavaScript.workspaceToCode(EspacioTrabajo);
+  	document.getElementById('cod').value = code;
+	}
+	EspacioTrabajo.addChangeListener(myUpdateFunction);
+	 </script>
+	 <script  type="text/javascript">
+	 function Parse (){
+  	  parser.parse("Principal(){Num uno: 5+8+9;}",85);
+  	  var reult = parser.otro();
+  	  console.log(reult);
+  	  }
+      </script>
+      <script type="text/javascript">
+      function Ejecutar (){
+      	var codigo=document.getElementById('cod').value;
+      	var cod_s=codigo.split('\n').join('~');
+      	var cod_s2=cod_s.split(';').join('@');
+      	document.cookie='name='+cod_s2;
+      	window.location.replace("/Ejecucion.html");
+  	  }
+     </script>
+	  <script src="blocky/generators/javascript/scontrol.js"></script>
+</body>
+</html>
